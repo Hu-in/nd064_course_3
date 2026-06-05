@@ -8,7 +8,10 @@ WORKDIR /app
 COPY . .
 
 # 4. Install dependencies
-RUN pip install --no-cache-dir -r requirements.txt
+
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir -r techtrends/requirements.tx
+
 
 # 5. Expose application port
 EXPOSE 3111
