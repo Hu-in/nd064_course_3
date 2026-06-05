@@ -5,9 +5,9 @@ metadata:
 spec:
   project: default
   source:
-    repoURL: https://github.com/Hu-in/nd064_course_1.git
+    repoURL: https://github.com/Hu-in/nd064_course_3.git
     targetRevision: main
-    path: project/techtrends/helm
+    path: project/helm
     helm:
       valueFiles:
         - values-prod.yaml
