@@ -18,4 +18,4 @@ RUN pip install --no-cache-dir -r techtrends/requirements.txt
 EXPOSE 3111
 
 # 6. Initialize database + start the app
-CMD ["sh", "-c", "python project/techtrends/init_db.py && python project/techtrends/app.py --host=0.0.0.0"]
+CMD ["sh", "-c", "cd /app/techtrends && python init_db.py && python app.py"]
