@@ -3,14 +3,14 @@ FROM python:3.10-slim
 
 # 2. Set working directory
 WORKDIR /app
-RUN apt-get update && apt-get install -y gcc libpq-dev
+RUN apt-get update && apt-get install -y gcc
 # 3. Copy project files
 COPY . .
 
 # 4. Install dependencies
 
 RUN pip install --upgrade pip
-RUN pip install --no-cache-dir -r techtrends/requirements.tx
+RUN pip install flask
 
 
 # 5. Expose application port
