@@ -3,7 +3,7 @@ FROM python:3.10-slim
 
 # 2. Set working directory
 WORKDIR /app
-
+RUN apt-get update && apt-get install -y gcc libpq-dev
 # 3. Copy project files
 COPY . .
 
@@ -17,4 +17,4 @@ RUN pip install --no-cache-dir -r techtrends/requirements.tx
 EXPOSE 3111
 
 # 6. Initialize database + start the app
-CMD python init_db.py && python app.py
+CMD ["sh", "-c", "python techtrends/init_db.py && python techtrends/app.py"]
