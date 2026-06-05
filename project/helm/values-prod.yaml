@@ -3,16 +3,26 @@ namespace:
 
 service:
   port: 4111
+  targetPort: 3111
+  protocol: TCP
+  type: ClusterIP
 
 image:
-  pullPolicy: Always
+  repository: husseinalhashimi91364/techtrends
+  tag: latest
+  pullPolicy: IfNotPresent
 
-replicaCount: 3
+replicaCount: 1
 
 resources:
   requests:
+    cpu: "250m"
+    memory: "64Mi"
+  limits:
     cpu: "500m"
     memory: "128Mi"
-  limits:
-    cpu: "1000m"
-    memory: "256Mi"
+
+containerPort: 3111
+
+livenessProbe: null
+readinessProbe: null
