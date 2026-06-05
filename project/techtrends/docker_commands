@@ -1,0 +1,17 @@
+## Docker commands used to build the application
+docker build -t techtrends .
+
+## Docker commands used to run the application
+docker run -d -p 7111:3111 techtrends
+
+## Docker commands used to get the application logs
+docker logs 6ee85d6c0ef7562359f18ed8d13a0efe4bb50f045bbb654fdc254d178955b9aee
+
+## Logs from the container running the TechTrends application
+ 
+ * Serving Flask app 'app'
+ * Debug mode: off
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:3111
+ * Running on http://172.17.0.2:3111
+
