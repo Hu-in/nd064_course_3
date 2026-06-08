@@ -1,5 +1,6 @@
 import sqlite3
 import logging
+import sys
 db_connection_count = 0
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
@@ -7,7 +8,13 @@ from werkzeug.exceptions import abort
 
 logging.basicConfig(
     level=logging.DEBUG,
-    format='%(asctime)s [%(levelname)s] %(message)s'
+    format='%(asctime)s [%(levelname)s] %(message)s',
+
+    handlers=[
+        logging.StreamHandler(sys.stdout),  
+        logging.StreamHandler(sys.stderr) 
+    ]
+
 )
 
 logger = logging.getLogger(__name__)
@@ -106,6 +113,10 @@ def create():
 
     return render_template('create.html')
 
+@app.errorhandler(404)
+def not_found(error):
+    logger.error(f"404 error: {request.path} not found")
+    return render_template("404.html"), 404
 
 # start the application on port 3111
 if __name__ == "__main__":

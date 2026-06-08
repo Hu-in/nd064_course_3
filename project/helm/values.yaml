@@ -10,7 +10,7 @@ service:
 image:
   repository: husseinalhashimi91364/techtrends
   tag: latest
-  pullPolicy: Always
+  pullPolicy: IfNotPresent
 
 replicaCount: 1
 
