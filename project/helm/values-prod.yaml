@@ -2,12 +2,13 @@ namespace:
   name: prod
 
 service:
-  port: 7111 
+  port: 7111
+  targetPort: 3111 
 
 image:
-  pullPolicy: Always ✅
+  pullPolicy: Always
 
-replicaCount: 5 ✅
+replicaCount: 5
 
 resources:
   requests:
@@ -16,4 +17,3 @@ resources:
   limits:
     cpu: "500m"
     memory: "256Mi"
-
